@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bigpy"
+version = "0.0.1"
+description = "A small, easy-to-use wrapper around Python's Decimal with configurable precision and rounding."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Matt" }
+]
+
+# No external deps – only stdlib `decimal` is used
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/matthenry/bigpy"
+Source = "https://github.com/matthenry/bigpy"
+Issues = "https://github.com/matthenry/bigpy/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "build",
+  "twine",
+]
+
+[tool.setuptools]
+packages = ["bigpy"]
+
+[tool.setuptools.package-data]
+"bigpy" = ["*.pem"]
