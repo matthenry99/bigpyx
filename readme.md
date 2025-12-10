@@ -1,6 +1,6 @@
-# bigpy — Arbitrary-Precision Decimal Numbers for Python
+# bigpyx — Arbitrary-Precision Decimal Numbers for Python
 
-`bigpy` is a tiny wrapper around Python’s built-in [`decimal.Decimal`](https://docs.python.org/3/library/decimal.html) type.
+`bigpyx` is a tiny wrapper around Python’s built-in [`decimal.Decimal`](https://docs.python.org/3/library/decimal.html) type.
 
 It gives you:
 
@@ -25,13 +25,13 @@ Perfect when `float` is too imprecise and you want something safer but still eas
 If you’ve published this as a package:
 
 ```bash
-pip install bigpy
+pip install bigpyx
 ```
 
 ## Quick Start
 
 ```python
-from bigpy import Big
+from bigpyx import Big
 
 # Basic construction
 a = Big("0.1")
@@ -52,7 +52,7 @@ print(d)           # -> 4.92
 Because Big uses Decimal under the hood, you don’t get the usual floating-point surprises:
 
 ```python
-from bigpy import Big
+from bigpyx import Big
 
 print(0.1 + 0.2)        # 0.30000000000000004 (float)
 print(Big("0.1") + Big("0.2"))  # 0.3 (Big)
@@ -63,7 +63,7 @@ print(Big("0.1") + Big("0.2"))  # 0.3 (Big)
 `Big` exposes two important global settings:
 
 ```python
-from bigpy import Big
+from bigpyx import Big
 
 # Maximum decimal places for division, sqrt, etc.
 Big.DP = 20    # default: 20
@@ -83,7 +83,7 @@ You can also use decimal.localcontext() for temporary precision overrides inside
 ## Creating Big Numbers
 
 ```python
-from bigpy import Big
+from bigpyx import Big
 from decimal import Decimal
 
 Big("1.2345")         # from string
@@ -130,7 +130,7 @@ print(x * y)      # -> 4.5
 Division respects Big.DP and Big.RM:
 
 ```python
-from bigpy import Big
+from bigpyx import Big
 
 Big.DP = 10
 Big.RM = 1  # ROUND_HALF_UP
